@@ -25,12 +25,15 @@ while fails < maxfails:
 
 	# check if the guess is valid: Is it one letter? Have they already guessed it?
 	if guess in word:
-		for i in range(0, 7):
+		for i in range(0, 8):
 			if guess == word[i]:
-				guess.append(current_word[i])
+				current_word[i] = guess
 
 		print(current_word)
 		print("correct")
+	if current_word == word:
+		print("all correct")
+		quit()
 	# check if the guess is correct: Is it in the word? If so, reveal the letters!
 	if guess not in current_word:
 		fails = fails+1

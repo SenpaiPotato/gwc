@@ -2,10 +2,10 @@ from PIL import Image
 import filters
 
 def main():
-    filename = "michelle.jpg"
-    img_object = Image.open("michelle.jpg")
-    filters.obamicon(img_object)
-    # img_object.show()
+    filename = "obama.jpg"
+    img = filters.load_img(filename)
+    filters.obamicon(img)
+    img.show()
 
 
 

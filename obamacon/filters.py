@@ -13,22 +13,28 @@ def save_img(img_object, save_name):
 def obamicon(img_object):
     #create new empty list where you will put new pixel values into (use Append)
     original_pixels = img_object.getdata()
+    new_pixels = []
     intensities = []
-    for i in range(0,len(original_pixels)):
+    darkBlue = (0,51, 76)
+    red = (217, 26, 33)
+    lightBlue = (112, 150, 158)
+    yellow = (252, 227, 166)
+    for i in range(0, len(original_pixels)):
 
         intensity = int(sum(original_pixels[i]))
         intensities.append(intensity)
     for i in intensities:
         if i < 182:
-            original_pixels.append(0, 51, 76)
-        elif 182 < i < 364:
-            original_pixels.append(207, 26, 33)
-        elif 364 < i < 546:
-            original_pixels.append(112, 150, 158)
-        elif i > 546:
-            original_pixels.append(252, 227, 166)
-    img_object.putdata(original_pixels)
-    print(original_pixels)
+            new_pixels.append(darkBlue)
+        elif 182 <= i < 364:
+            new_pixels.append(red)
+        elif 364 <= i < 546:
+            new_pixels.append(lightBlue)
+        elif i >= 546:
+            new_pixels.append(yellow)
+
+    img_object.putdata(new_pixels)
+    
     #use for loop to go through each pixel
     #at every pixel sum up the rgb values
 

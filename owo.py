@@ -37,4 +37,4 @@ while fails < maxfails:
 	# check if the guess is correct: Is it in the word? If so, reveal the letters!
 	if guess not in current_word:
 		fails = fails+1
-		print("You have " + str(maxfails - fails) + " tries left!")
+		print("You have " + str(maxfails - fails) + " tries left!") 
